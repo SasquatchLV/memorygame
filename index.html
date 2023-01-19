@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+  </head>
+  <body>
+    <header class="container">
+      <nav>
+        <ul>
+          <li><strong>Memory Game</strong></li>
+        </ul>
+        <ul>
+          <li class="move-count"><strong></strong></li>
+        </ul>
+        <ul>
+          <li><a href="#" class="timer">00:00</a></li>
+          <li><a href="#" class="matched-cards">0/0</a></li>
+          <li><a href="#" role="button">Restart</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container">
+      <button class="start-button">Start game</button>
+      <div class="card-container"></div>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
