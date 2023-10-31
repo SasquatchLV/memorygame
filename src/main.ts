@@ -9,6 +9,8 @@ const cardContainerEl =
   document.querySelector<HTMLDivElement>(".card-container")
 const moveCountEl = document.querySelector<HTMLDivElement>(".move-count")
 
+const restartButton = document.querySelector<HTMLButtonElement>("#restart")
+
 interface ICardElement extends HTMLDivElement {
   cardValue: string
 }
@@ -18,6 +20,7 @@ const startGame = () => {
   let matchedCards: ICardElement[] = []
   let time = 0
   let moveCount = 0
+  cardContainerEl!.innerHTML = ""
 
   const cards: string[] = [
     "apple",
@@ -128,6 +131,13 @@ const startGame = () => {
       cardElement.addEventListener("click", () => {
         flipCard(cardElement)
       })
+    })
+
+    restartButton!.style.display = "block"
+    restartButton!.addEventListener("click", () => {
+      clearInterval(timerInterval)
+      document.querySelector<HTMLDivElement>(".timer")!.innerText = "00:00"
+      startGame()
     })
   }
 }
